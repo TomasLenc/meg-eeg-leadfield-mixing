@@ -6,10 +6,10 @@ import fooof
 import pandas as pd
 
 mne.set_log_level(verbose=False)
-os.makedirs('../results/', exist_ok=True)
+os.makedirs('results', exist_ok=True)
 
-folder = "../working/"
-subjects = pd.read_csv("../csv/name_match.csv")
+folder = "working"
+subjects = pd.read_csv("csv/name_match.csv")
 conditions = ("eo", "ec")
 min_freq = 8
 max_freq = 13
@@ -63,7 +63,7 @@ for i_subj, subject in enumerate(subjects):
     )
     dfs.append(df_subject)
     df_subjects = pd.concat(dfs, axis=1).T
-    df_subjects.to_csv("../results/center_frequencies.csv")
+    df_subjects.to_csv("results/center_frequencies.csv")
     print("%i/%i, %s, alpha: %.2f Hz" % (i_subj, len(subjects), subject, peak))
 
 # select subjects according to amplitude?

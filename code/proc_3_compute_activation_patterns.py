@@ -6,14 +6,14 @@ import mne
 import ssd
 import helper
 
-subjects = pd.read_csv("../csv/name_match.csv")
-df = pd.read_csv("../results/center_frequencies.csv")
+subjects = pd.read_csv("csv/name_match.csv")
+df = pd.read_csv("results/center_frequencies.csv")
 df = df.set_index("subject")
 
-folder = "../working/"
-results_dir = "../results/df/"
+folder = "working/"
+results_dir = "results/df/"
 os.makedirs(results_dir, exist_ok=True)
-ssd_dir = "../results/ssd/"
+ssd_dir = "results/ssd/"
 conditions = ["eo", "ec"]
 
 # %%

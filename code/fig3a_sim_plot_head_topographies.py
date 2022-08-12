@@ -34,7 +34,7 @@ def plot_topoplots(ch_names, electrodes, pos_brain, df, LF, colors_dict):
         mne.viz.plot_topomap(LF_entry, raw.info, axes=ax1, show=False)
 
     fig.set_size_inches(12, 3)
-    fig.savefig("../figures/fig3_topos.png", dpi=200)
+    fig.savefig("figures/fig3_topos.png", dpi=200)
     fig.show()
 
     return fig
@@ -42,7 +42,7 @@ def plot_topoplots(ch_names, electrodes, pos_brain, df, LF, colors_dict):
 
 # %% load required files
 electrodes, ch_names, LF, file = load_leadfield()
-df_left = pd.read_csv("../csv/source_locations.csv")
+df_left = pd.read_csv("csv/source_locations.csv")
 
 colors_dict = {
     "occipital": "#482878",
@@ -67,7 +67,7 @@ df_right.loc[:, "mni-x"] *= -1
 
 # save all sources into csv-file
 df = pd.concat((df_left, df_right))
-df.to_csv("../csv/source_locations_all_hemispheres.csv", index=False)
+df.to_csv("csv/source_locations_all_hemispheres.csv", index=False)
 
 
 # %% plot alpha sources as small sphere
@@ -86,7 +86,7 @@ for i in range(len(df)):
 plot_electrodes(electrodes, plotter, color="w")
 
 # save figure for display with mpimg later
-plot_3d_filename = "../figures/fig3_mesh_nyhead.png"
+plot_3d_filename = "figures/fig3_mesh_nyhead.png"
 plotter.set_background(None)
 cpos = [(-647.5069957432964, 56.87433923564016, 50), (0, 0, 0), (0, 0, 1)]
 plotter.show(
@@ -107,4 +107,4 @@ for i in range(nr_dipoles):
     dipole_coordinates[i] = pos_brain[idx_source]
 
 data = {"LF": LF_selected, "dipole_coord": dipole_coordinates}
-np.save("../csv/leadfield_selected_dipoles.npy", data)
+np.save("csv/leadfield_selected_dipoles.npy", data)

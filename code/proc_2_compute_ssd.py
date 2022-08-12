@@ -7,11 +7,11 @@ import ssd
 
 mne.set_log_level(verbose=False)
 
-df = pd.read_csv("../results/center_frequencies.csv")
+df = pd.read_csv("results/center_frequencies.csv")
 df = df.set_index("subject")
-folder = "../working/"
+folder = "working/"
 
-results_dir = "../results/ssd/"
+results_dir = "results/ssd/"
 os.makedirs(results_dir, exist_ok=True)
 
 peak_cond = "alpha_peak"

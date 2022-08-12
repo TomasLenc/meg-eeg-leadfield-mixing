@@ -50,12 +50,12 @@ def plot_alpha_map(df, alpha_scale, colors):
             w.set_edgecolor("w")
 
     fig.show()
-    plot_file = "../figures/fig3_simulation_alpha_scale_%.2f.png" % alpha_scale
+    plot_file = "figures/fig3_simulation_alpha_scale_%.2f.png" % alpha_scale
     fig.savefig(plot_file, dpi=200)
     return fig
 
 
-folder = "../working/"
+folder = "working/"
 raw_real = helper.get_electrodes()
 plt.close("all")
 
@@ -66,11 +66,11 @@ info = mne.create_info(ch_names, sfreq=1000, ch_types="eeg")
 montage = mne.channels.make_dig_montage(ch_pos=ch_pos, coord_frame="head")
 
 # load dipoles
-dipole_fname = "../csv/leadfield_selected_dipoles.npy"
+dipole_fname = "csv/leadfield_selected_dipoles.npy"
 data = np.load(dipole_fname, allow_pickle=True).item()
 LF = data["LF"]
 dipole_coord = data["dipole_coord"]
-df = pd.read_csv("../csv/source_locations_all_hemispheres.csv")
+df = pd.read_csv("csv/source_locations_all_hemispheres.csv")
 
 
 # %% define gain factors to scale leadfield according to the source types
@@ -81,7 +81,7 @@ temporal_scale = 0.25
 pie_size = 0.11
 
 # set colors for left and right hemisphere
-df_left = pd.read_csv("../csv/source_locations.csv")
+df_left = pd.read_csv("csv/source_locations.csv")
 colors_left = {
     "occipital": "#482878",
     "parietal": "#F6CA44",
@@ -90,7 +90,7 @@ colors_left = {
 }
 colors_left = df_left.source_type.replace(colors_left).values
 
-df_right = pd.read_csv("../csv/source_locations.csv")
+df_right = pd.read_csv("csv/source_locations.csv")
 colors_right = {
     "occipital": "#A498C0",
     "parietal": "#FAE4A1",

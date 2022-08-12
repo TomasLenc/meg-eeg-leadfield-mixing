@@ -91,9 +91,9 @@ def get_electrodes():
     -------
         raw : mne.io.Raw, raw-file with electrode position.
     """
-    subjects = pd.read_csv("../csv/name_match.csv")
+    subjects = pd.read_csv("csv/name_match.csv")
     subject = subjects.INDI_ID.iloc[2]
-    folder = "../working/"
+    folder = "working"
     file_name = "%s/%s_eo-raw.fif" % (folder, subject)
     raw = mne.io.read_raw_fif(file_name, preload=True)
     raw.crop(0, 1)
@@ -143,7 +143,7 @@ def load_leadfield():
     """
 
     # load lead field matrix
-    file = File("../data/leadfields/sa_nyhead.mat", "r")
+    file = File("data/leadfields/sa_nyhead.mat", "r")
 
     # extract channel names
     ch_names = get_channel_names(file)
