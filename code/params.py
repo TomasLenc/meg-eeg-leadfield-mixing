@@ -1,11 +1,11 @@
 # parameters and paths
-
-EEG_DATA_FOLDER = "/cs/department2/data/eeg_lemon/"
-MEG_DATA_FOLDER = "/cs/department2/data/meg_schoffelen/"
-FIG_FOLDER = "../figures/"
-CSV_FOLDER = "../csv/"
-RESULTS_FOLDER = "../results/"
-LEADFIELD_DIR = "../leadfields/"
+PROJECT_FOLDER = "/datadisk/Dropbox/fromPapers/Schaworonkow_2021_biorxiv/eeg-leadfield-mixing"
+EEG_DATA_FOLDER = f"{PROJECT_FOLDER}/eeg_lemon/"
+MEG_DATA_FOLDER = f"{PROJECT_FOLDER}/meg_schoffelen/"
+FIG_FOLDER = f"{PROJECT_FOLDER}/figures/"
+CSV_FOLDER = f"{PROJECT_FOLDER}/csv/"
+RESULTS_FOLDER = f"{PROJECT_FOLDER}/results/"
+LEADFIELD_DIR = f"{PROJECT_FOLDER}/leadfields/"
 
 
 # spectral parametrization
